@@ -16,3 +16,10 @@
 *git commit -m "" ->To make break the timeline
 
 * git log to -> to list all the commits
+
+* git remote add origin master "Repo url"
+* git branch -M main-> change master name
+* git push origin master
+
+
+
