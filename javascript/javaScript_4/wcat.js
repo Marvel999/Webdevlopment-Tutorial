@@ -51,9 +51,26 @@ if (isSoption == true) {
     totalContent = tempArr.join("\r\n");
 }
 
+
+
 // put a number on every lint
 let isN = options.includes("-n");
-if (isN == true) {
+let isB = options.includes("-b");
+let finalOption;
+if(isN==true){
+if(isB==true){
+    let idxB=options.indexOf("-b");
+    let idxN=options.indexOf("-n");
+    finalOption=idxB<idxN?"-b":"-n"
+}
+else{
+    finalOption="-n"
+}
+}else if(isB==true){
+finalOption="-b"
+}
+
+if (finalOption == "-n") {
     let count = 1;
     let contentArr = totalContent.split("\r\n");
 
@@ -64,8 +81,26 @@ if (isN == true) {
     }
     totalContent = contentArr.join("\r\n");
 }
-console.log(totalContent);
+// console.log(totalContent);
 
+
+//-b implementation 
+if (finalOption == "-b") {
+    console.log("-b")
+    let count = 1;
+    let contentArr = totalContent.split("\r\n");
+
+    // console.log(contentArr);
+    for (let i = 0; i < contentArr.length; i++) {
+    if(contentArr[i]!=""){
+        contentArr[i] = count+". " + contentArr[i];
+        count++;
+    }
+
+    }
+    totalContent = contentArr.join("\r\n");
+}
+console.log(totalContent);
 
 
 //  -s option implement
