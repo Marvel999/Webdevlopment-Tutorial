@@ -21,5 +21,6 @@
 * git branch -M main-> change master name
 * git push origin master
 
-
+* git checkout commit id -> go to previous commit
+* git checkout main-> main head commit
 
